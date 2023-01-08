@@ -29,6 +29,12 @@ const App = () => {
   ];
 
 
+  // A
+  const handleSearch = event => {
+    // C
+    console.log(event.target.value);
+  };
+
 
 
   return (
@@ -36,7 +42,7 @@ const App = () => {
       <div className=''>
         <h1>My Hacker Stories</h1>
 
-        <Search />
+        <Search onSearch={handleSearch} />
 
         <hr />
 
@@ -68,12 +74,15 @@ const List = props => (
 
 
 // Search component
-const Search = () => {
+const Search = props => {
 
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const handleChange = event => {
     setSearchTerm(event.target.value);
+
+    // B
+    props.onSearch(event);
   };
 
   return (
