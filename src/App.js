@@ -56,32 +56,40 @@ const App = () => {
 
 
 // Search component
-const Search = props => {
+const Search = ({ search, onSearch }) => (
+  <div className='search'>
+    <input id="search" value={search} onChange={onSearch} type="text" placeholder='Search' />
+  </div>
+)
 
-
-  return (
-    <div className='search'>
-      <input id="search" value={props.search} onChange={props.onSearch} type="text" placeholder='Search' />
-
-
-    </div>
-  )
-}
 
 
 // List component
-const List = props => (
+const List = ({ list }) =>
   <ol>
-    {props.list.map(item =>
-      <li key={item.objectID}>
-        <span>
-          <a href={item.url}>{item.title} </a>
-        </span>
-        <span>{item.author} </span>
-        <span>{item.num_comments} </span>
-        <span>{item.points} </span>
-      </li>
-    )}
+    {list.map(item => <Item key={item.objectID} item={item} />)}
   </ol>
-)
+
+
+const Item = ({
+  item: {
+    title,
+    url,
+    author,
+    num_comments,
+    points
+  }
+}) =>
+  <li >
+    <span>
+      <a href={url}>{title} | </a>
+    </span>
+    <span>{author} | </span>
+    <span>{num_comments} | </span>
+    <span>{points} | </span>
+  </li>
+
+
+
+
 export default App;
