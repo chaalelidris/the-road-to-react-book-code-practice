@@ -28,6 +28,9 @@ const App = () => {
 
   ];
 
+
+
+
   return (
     <div className='container content my-4'>
       <div className=''>
@@ -66,13 +69,20 @@ const List = props => (
 
 // Search component
 const Search = () => {
+
+  const [searchTerm, setSearchTerm] = React.useState('');
+
   const handleChange = event => {
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
     <div className='search'>
       <input id="search" onChange={handleChange} type="text" placeholder='Search' />
+      <p>
+        Searching for <strong>{searchTerm}</strong>.
+      </p>
+
     </div>
   )
 }
