@@ -67,19 +67,15 @@ const Search = ({ search, onSearch }) => (
 // List component
 const List = ({ list }) =>
   <ol>
-    {list.map(item => <Item key={item.objectID} item={item} />)}
+    {list.map(({ objectID, ...item }) =>
+      <Item
+        key={objectID}
+        {...item}
+      />)}
   </ol>
 
 
-const Item = ({
-  item: {
-    title,
-    url,
-    author,
-    num_comments,
-    points
-  }
-}) =>
+const Item = ({ title, url, author, num_comments, points }) =>
   <li >
     <span>
       <a href={url}>{title} | </a>
