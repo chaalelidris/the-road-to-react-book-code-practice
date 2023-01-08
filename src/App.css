@@ -15,10 +15,6 @@
     color: #403629;
 }
 
-.search {
-    border: 1px solid #1e1e1e;
-}
-
 .search>input {
     width: 90%;
     display: block;

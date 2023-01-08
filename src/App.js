@@ -1,9 +1,7 @@
 import React from 'react';
 import "./App.css"
-
-
-
-
+import "./components/Search"
+import "./components/List"
 
 
 
@@ -28,9 +26,7 @@ const App = () => {
 
   ];
 
-  const [searchTerm, setSearchTerm] = React.useState('');
-
-
+  const [searchTerm, setSearchTerm] = React.useState('React');
   // A
   const handleSearch = event => {
     // C
@@ -41,13 +37,12 @@ const App = () => {
 
 
 
-
   return (
     <div className='container content my-4'>
       <div className=''>
         <h1>My Hacker Stories</h1>
 
-        <Search onSearch={handleSearch} />
+        <Search search={searchTerm} onSearch={handleSearch} />
 
         <hr />
 
@@ -59,6 +54,19 @@ const App = () => {
   );
 }
 
+
+// Search component
+const Search = props => {
+
+
+  return (
+    <div className='search'>
+      <input id="search" value={props.search} onChange={props.onSearch} type="text" placeholder='Search' />
+
+
+    </div>
+  )
+}
 
 
 // List component
@@ -76,24 +84,4 @@ const List = props => (
     )}
   </ol>
 )
-
-
-// Search component
-const Search = props => {
-
-
-  return (
-    <div className='search'>
-      <input id="search" onChange={props.onSearch} type="text" placeholder='Search' />
-
-
-    </div>
-  )
-}
-
-
-
-
-
-
 export default App;
