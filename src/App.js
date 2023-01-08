@@ -74,4 +74,22 @@ function Search() {
     </div>
   )
 }
+
+class Developer {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getName() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+// class instantiation
+const robin = new Developer('Robin', 'Wieruch');
+console.log(robin.getName());
+// "Robin Wieruch"
+// another class instantiation
+const dennis = new Developer('Dennis', 'Wieruch');
+
+
 export default App;
