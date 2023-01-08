@@ -1,6 +1,30 @@
 .content {
+    min-width: 360px;
+    max-width: 680px;
     border: 1px solid rgb(0, 0, 0);
+    background-color: #fbd5a4;
+    border-radius: 30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.content h1 {
+    color: #403629;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search>input {
+    width: 90%;
+    outline: none;
+    padding: 4px 12px;
+    border-radius: 1em;
+    border: 2px solid 1e1e1e;
 }

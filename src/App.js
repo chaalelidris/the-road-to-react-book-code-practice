@@ -32,8 +32,8 @@ function App() {
     <div className='container content my-4'>
       <div className=''>
         <h1>My Hacker Stories</h1>
-        <label htmlFor="search" className='mr-3'>Search: </label>
-        <input id="search" type="text" />
+
+        <Search />
 
         <hr />
 
@@ -63,6 +63,15 @@ function List() {
         </li>
       )}
     </ol>
+  )
+}
+
+// Search component
+function Search() {
+  return (
+    <div className='search'>
+      <input id="search" type="text" placeholder='Search' />
+    </div>
   )
 }
 export default App;
