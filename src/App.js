@@ -19,37 +19,31 @@ const list = [
     points: 5,
     objectID: 1,
   },
-  {
-    title: 'Redux',
-    url: 'https://redux.js.org/',
-    author: 'Dan Abramov, Andrew Clark',
-    num_comments: 2,
-    points: 5,
-    objectID: 2,
-  },
+
 ];
 
-const numbers = [1, 4, 9, 16];
-const newNumbers = numbers.map(number => number * 3);
-console.log(newNumbers)
 
 
 
-const App = () => (
-  <div className='container content my-4'>
-    <div className=''>
-      <h1>My Hacker Stories</h1>
+const App = () => {
 
-      <Search />
 
-      <hr />
+  return (
+    <div className='container content my-4'>
+      <div className=''>
+        <h1>My Hacker Stories</h1>
 
-      <List />
+        <Search />
+
+        <hr />
+
+        <List />
+
+      </div>
 
     </div>
-
-  </div>
-);
+  );
+}
 
 
 
@@ -71,27 +65,19 @@ const List = () => (
 
 
 // Search component
-const Search = () => (
-  <div className='search'>
-    <input id="search" type="text" placeholder='Search' />
-  </div>
-)
+const Search = () => {
+  const handleChange = event => {
+    console.log(event.target.value);
+  };
 
-
-class Developer {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-  getName() {
-    return this.firstName + ' ' + this.lastName;
-  }
+  return (
+    <div className='search'>
+      <input id="search" onChange={handleChange} type="text" placeholder='Search' />
+    </div>
+  )
 }
 
-// class instantiation
-const robin = new Developer('Robin', 'Wieruch');
 
-console.log(robin.getName()); // "Robin Wieruch"
 
 
 
